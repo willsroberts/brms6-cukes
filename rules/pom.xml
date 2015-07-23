@@ -1,0 +1,163 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+	<parent>
+        <groupId>com.willsroberts.brms</groupId>
+        <artifactId>brms-cukes-start-example-parent-project</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>
+            ../parent-project/pom.xml
+        </relativePath>
+    </parent>
+    <artifactId>brms-cukes-example-rules</artifactId>
+    <name>brms-cukes-starter-example-rules</name>
+
+	<build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <configuration>
+                        <archive>
+                            <manifestEntries>
+                                <Dependencies>org.infinispan, org.hibernate</Dependencies>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+	</build>
+
+	 <properties>
+        <version.spring>4.1.1.RELEASE</version.spring>
+        <version.javax.inject>1</version.javax.inject>
+        <version.cucumber>1.2.0</version.cucumber>
+        <version.slf4j>1.6.6</version.slf4j>
+        <version.junit>4.11</version.junit>
+        <bpms.version>6.0.3-redhat-6</bpms.version>
+    </properties>
+
+
+	<dependencies>
+
+		<dependency>
+       	   	<groupId>org.slf4j</groupId>
+           	<artifactId>slf4j-simple</artifactId>
+       		<version>${version.slf4j}</version>
+        </dependency>
+
+		<dependency>
+           	<groupId>org.kie</groupId>
+            <artifactId>kie-api</artifactId>
+            <version>${bpms.version}</version>
+        </dependency>
+        
+        <dependency>
+          <groupId>org.drools</groupId>
+          <artifactId>drools-decisiontables</artifactId>
+          <version>${bpms.version}</version>
+          <type>jar</type>
+        </dependency>
+
+        <dependency>
+          <groupId>org.drools</groupId>
+          <artifactId>drools-core</artifactId>
+	      <version>${bpms.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-compiler</artifactId>
+            <version>${bpms.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-templates</artifactId>
+            <version>${bpms.version}</version>
+        </dependency>
+
+		<dependency>
+            <groupId>org.mvel</groupId>
+            <artifactId>mvel2</artifactId>
+            <version>2.1.3.Final</version>
+            </dependency>
+
+		<dependency>
+	    	<groupId>info.cukes</groupId>
+	    	<artifactId>cucumber-junit</artifactId>
+	    	<version>${version.cucumber}</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-core</artifactId>
+	    	<version>${version.cucumber}</version>
+        </dependency>
+
+		<dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-spring</artifactId>
+			<version>${version.cucumber}</version>
+        </dependency>
+	
+		<dependency>
+	    	<groupId>junit</groupId>
+	    	<artifactId>junit</artifactId>
+	    	<version>${version.junit}</version>
+		</dependency>
+	
+		<dependency>
+		    <groupId>info.cukes</groupId>
+	   		<artifactId>cucumber-java</artifactId>
+	    	<version>${version.cucumber}</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${version.spring}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${version.spring}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${version.spring}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${version.spring}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${version.spring}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${version.spring}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${version.spring}</version>
+		</dependency>
+
+	</dependencies>
+
+</project>
